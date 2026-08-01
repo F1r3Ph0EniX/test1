@@ -1,0 +1,28 @@
+<html>
+
+	<header>
+		<!-- Link for stylesheet below -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+		<title>Main Page</title>
+	</header>
+
+	<body>
+		<h2>Record of People</h2>
+		<table>
+			<tr>
+				<th>Full Name</th>
+				<th>Screen Name</th>
+				<th>Identity</th>
+			</tr>
+			<!-- Using Jinja to display data -->
+			{% for record in records %}
+			<tr>
+				<td>{{ record[0] }}</td>
+				<td>{{ record[1] }}</td>
+				<td>{{ record[2] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+
+</html>
