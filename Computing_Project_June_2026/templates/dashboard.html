@@ -1,0 +1,103 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Dashboard</title>
+    </header>
+
+    <body>
+
+        <h1>Dashboard</h1>
+        <br>
+        <h2>Tasks</h2>
+        <br>
+        <!--<form action="/update_task" method="POST">
+            <p>Sort By:
+                <select name="status" required>
+                    <option value="" disabled selected>--Select Sorting--</option>
+                    <option value="1">Categories</option>
+                    <option value="2">Chronological</option>
+                    <option value="3">Completed</option>
+                </select>
+            </p>
+			<br>
+			<button type="submit">Amend Task</button>
+		</form>
+        <br>-->
+        <table>
+            <tr>
+                <th class="col-medium">Title</th>
+                <th class="col-long">Description</th>
+                <th class="col-small">Due Date</th>
+                <th class="col-small">Priority</th>
+                <th class="col-medium">Subject</th>
+                <th class="col-medium">Status</th>
+                <th class="col-medium">Category</th>
+            </tr>
+            {% for task in user_tasks %}
+                <tr>
+                    <td>{{task[1]}}</td>
+                    <td>{{task[2]}}</td>
+                    <td>{{task[3]}}</td>
+                    <td>{{task[4]}}</td>
+                    <td>{{task[5]}}</td>
+                    <td>{{task[6]}}</td>
+                    <td>{{task[7]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <br>
+
+        <a href="{{ url_for('submit_task')}}" class="button-style">
+            <button class="button-style">New Task</button>
+        </a>
+        <br>
+
+        <a href="{{ url_for('amend_task_page')}}" class="button-style">
+            <button class="button-style">Edit Tasks</button>
+        </a>
+        <br>
+
+        <a href="{{ url_for('delete_task_page')}}" class="button-style">
+            <button class="button-style">Delete Task</button>
+        </a>
+
+        <h2>Study Sessions</h2>
+        <br>
+        <table>
+            <tr>
+                <th class="col-small">Date</th>
+                <th class="col-small">Start Time</th>
+                <th class="col-small">End Time</th>
+                <th class="col-medium">Subject</th>
+                <th class="col-long">Remarks</th>
+            </tr>
+            {% for session in user_sessions %}
+                <tr>
+                    <td>{{session[1]}}</td>
+                    <td>{{session[2]}}</td>
+                    <td>{{session[3]}}</td>
+                    <td>{{session[5]}}</td>
+                    <td>{{session[4]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <br>
+
+        <a href="{{ url_for('session_submission_page')}}" class="button-style">
+            <button class="button-style">Add Session</button>
+        </a>
+
+        <br>
+
+        <a href="{{ url_for('session_deletion_page')}}" class="button-style">
+            <button class="button-style">Delete Session</button>
+        </a>
+
+        <br>
+
+        <a href="{{ url_for('home') }}" class="button-style">
+            <button class="button-style">Logout</button>
+        </a>
+
+    </body>
+</html>

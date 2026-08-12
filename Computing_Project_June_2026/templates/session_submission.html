@@ -1,0 +1,53 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Session Addition</title>
+    </header>
+
+    <body>
+
+        <h2>Study Sessions</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Subject</th>
+                <th>Remarks</th>
+            </tr>
+            {% for session in user_session %}
+                <tr>
+                    <td>{{session[1]}}</td>
+                    <td>{{session[2]}}</td>
+                    <td>{{session[3]}}</td>
+                    <td>{{session[5]}}</td>
+                    <td>{{session[4]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <br>
+
+        <h1>Add a new study session</h1>
+
+        <br>
+
+        <form action="/submit_session" method="POST">
+
+            <p>Date: <input type="date" name="date" required></p>
+            <p>Start Time: <input type="time" name="startTime" required></p>
+            <p>End Time: <input type="time" name="endTime" required></p>
+            <p>Subject: <input type="text" name="subject" required></p>
+            <p>Remarks: <input type="text" name="remarks" required></p>
+			
+			<button type="submit">Add Session</button>
+		</form>
+
+        <br>
+        
+        <a href="{{ url_for('dashboard') }}" class="button-style">
+            <button>Dashboard</button>
+        </a>
+
+    </body>
+</html>

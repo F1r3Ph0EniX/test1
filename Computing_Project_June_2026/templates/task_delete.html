@@ -1,0 +1,51 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Task Deletion</title>
+    </header>
+
+    <body>
+        <h1>Delete a task</h1>
+
+        <br>
+
+        <h2>Current Tasks</h2>
+        <br>
+        <table>
+            <tr>
+                <th class="col-small">Task ID</th>
+                <th class="col-medium">Title</th>
+                <th class="col-long">Description</th>
+                <th class="col-medium">Due Date</th>
+                <th class="col-medium">Priority</th>
+                <th class="col-medium">Subject</th>
+                <th class="col-medium">Status</th>
+                <th class="col-medium">Category</th>
+            </tr>
+            {% for task in user_tasks %}
+                <tr>
+                    <td>{{task[0]}}</td>
+                    <td>{{task[1]}}</td>
+                    <td>{{task[2]}}</td>
+                    <td>{{task[3]}}</td>
+                    <td>{{task[4]}}</td>
+                    <td>{{task[5]}}</td>
+                    <td>{{task[6]}}</td>
+                    <td>{{task[7]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <br>
+
+        <form action="/deleted_task" method="POST">
+            <p>Task ID: <input type="number" name="taskID" required></p>
+			
+			<button type="submit" class="button-style">Delete Task</button>
+		</form>
+
+        <a href="{{ url_for('dashboard') }}">
+            <button class="button-style">Dashboard</button>
+        </a>
+
+    </body>
+</html>

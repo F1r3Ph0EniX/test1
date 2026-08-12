@@ -1,0 +1,44 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Task Addition</title>
+    </header>
+
+    <body>
+        <h1>Add a new task</h1>
+
+        <br>
+
+        <form action="/submit_task" method="POST">
+			<p>Title: <input type="text" name="title" required></p>
+			<p>Description: <input type="text" name="description" required></p>
+            <p>Due Date: <input type="date" name="dueDate" required></p>
+            <p>Priority:
+                <select name="priority" required>
+                    <option value="" disabled selected>-- Select Priority Level --</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </p>
+            <p>Subject: <input type="text" name="subject" required></p>
+            <p>Category:
+                <select name="category" required>
+                    <option value="" disabled selected>-- Select Category --</option>
+                    <option value="1">Homework</option>
+                    <option value="2">Revision</option>
+                    <option value="3">Project</option>
+                    <option value="4">Consultation</option>
+                    <option value="5">Test Prep</option>
+                </select>
+            </p>
+			
+			<button type="submit" class="button-style">Add Task</button>
+		</form>
+
+        <a href="{{ url_for('dashboard') }}">
+            <button class="button-style">Dashboard</button>
+        </a>
+
+    </body>
+</html>

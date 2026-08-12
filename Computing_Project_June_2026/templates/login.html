@@ -1,0 +1,28 @@
+<html>
+<head>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<title>Login Page</title>
+
+</head>
+
+<body>
+
+
+	<h1>Authentication</h1>
+	
+	<div class="auth">
+		<h3>Enter Credentials</h3>
+		<form action="{{ url_for('login') }}" method="POST">
+			<p>Email: <input type="text" name="email" required></p>
+			<p>Password: <input type="password" name="password" required></p>
+			
+			<button type="submit" class="button-style">Login</button>
+		</form>
+	</div>
+
+	<a href="{{ url_for('home') }}" class="button-style">
+        <button class="button-style">Home</button>
+    </a>
+
+</body>

@@ -1,0 +1,47 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Task Deletion</title>
+    </header>
+
+    <body>
+        <h1>Delete a study session</h1>
+
+        <br>
+
+        <h2>Study Sessions</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Session ID</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Subject</th>
+                <th>Remarks</th>
+            </tr>
+            {% for session in user_sessions %}
+                <tr>
+                    <td>{{session[0]}}</td>
+                    <td>{{session[1]}}</td>
+                    <td>{{session[2]}}</td>
+                    <td>{{session[3]}}</td>
+                    <td>{{session[5]}}</td>
+                    <td>{{session[4]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <br>
+
+        <form action="/session_deletion" method="POST">
+            <p>Session ID: <input type="number" name="sessionID" required></p>
+			
+			<button type="submit">Delete Session</button>
+		</form>
+
+        <a href="{{ url_for('dashboard') }}" class="button-style">
+            <button>Dashboard</button>
+        </a>
+
+    </body>
+</html>

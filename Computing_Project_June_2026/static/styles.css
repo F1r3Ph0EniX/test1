@@ -1,0 +1,96 @@
+/* General Styles */
+
+body { 
+	background-color: rgba(247, 243, 243, 0.959);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: "Consolas", sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+table {
+	table-layout: fixed;
+	width: 90%;
+	max-width: 90%;
+
+	padding: 5px;
+	border: solid black 3px;
+	margin: 10px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+	white-space: normal;
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
+.col-small { 
+	width: 15%;
+ }  /* IDs, Dates */
+
+.col-medium { 
+	width: 35%; 
+}  /* Names, Titles, Status */
+
+.col-long {
+	 width: 50%; 
+}    /* Descriptions */
+
+
+.auth {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.button-style {
+	
+	/*Size of button*/
+	display: block;
+	margin: 10px auto;
+	width: max-content;
+	min-width: 100px;
+	padding: 5px 7px;
+
+	/*Colouring of button*/
+	background-color: navy;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	text-decoration: none;
+
+	/*Others*/
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	border: none;
+	appearance: none;
+}
+
+.button-style:hover {
+	background-color: darkblue;
+	transform: translateY(2px);
+}
+
+.SinglePhoto {
+	max-width: 30%;
+	border: 1px solid #ccc;
+	padding: 10px;
+	/*max-height: 28%;
+	height: auto;
+	object-fit: cover;*/
+}
+
+.picture {
+	width:100%;
+	height:auto;
+}

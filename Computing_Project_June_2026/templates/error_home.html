@@ -1,0 +1,26 @@
+<html>
+<head>
+
+	<title>Welcome!</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+
+	<h1>Authentication Failed</h1>
+	<br>
+	<p>Due to either: Email already in use, login credentials entered incorrectly</p>
+	
+	<div class="auth">
+		<h3>Click either one to get started!</h3>		
+		<a href="{{ url_for('loginpage') }}">
+            <button class="button-style">Log In</button>
+        </a>
+		
+		<a href="{{ url_for('signuppage') }}">
+            <button class="button-style">Sign Up</button>
+        </a>
+	</div>
+
+</body>

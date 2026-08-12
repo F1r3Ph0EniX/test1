@@ -1,0 +1,22 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Home</title>
+    </header>
+
+    <body>
+
+        <h1>Home</h1>
+        <br>
+        <h3>Welcome! Pick an option to get started!</h3>
+        <br>
+        <a href="{{ url_for('loginpage') }}" class="button-style">
+            <button class="button-style">Login</button>
+        </a>
+        <br>
+        <a href="{{ url_for('signuppage') }}" class="button-style">
+            <button class="button-style">Sign Up</button>
+        </a>
+
+    </body>
+</html>
