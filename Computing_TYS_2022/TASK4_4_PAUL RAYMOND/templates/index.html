@@ -1,0 +1,42 @@
+<html>
+	<header>
+		<title>Main Page</title>
+		<style>
+			table {
+			margin-left: auto;
+			margin-right: auto;
+  width: 50%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 2px;            
+  border: 1px solid black; 
+  text-align: left;   
+}
+body {
+text-align: center;
+}  
+		</style>
+	</header>
+	
+	<body>
+		<h2>Books yet to be returned</h2>
+		
+		<table>
+			<tr>
+				<th>Family Name</th>
+				<th>Given Name</th>
+				<th>Book Title</th>
+			</tr>
+			<!-- Data -->
+			{% for loan in loans %}
+			<tr>
+				<td>{{ loan[0] }}</td>
+				<td>{{ loan[1] }}</td>
+				<td>{{ loan[2] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+
+</html>
